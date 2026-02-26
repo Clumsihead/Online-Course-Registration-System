@@ -25,8 +25,10 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000 🚀");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} 🚀`);
 });
 
 app.get("/courses", async (req, res) => {
@@ -174,8 +176,8 @@ app.post("/admin/courses", async (req, res) => {
   try {
     await pool.query(
       `INSERT INTO courses 
-      (course_code, course_name, credits, faculty_name, department, semester, total_seats, seats_available)
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$7)`,
+        (course_code, course_name, credits, faculty_name, department, semester, total_seats)
+        VALUES ($1,$2,$3,$4,$5,$6,$7)
       [code, name, credits, faculty, department, semester, totalSeats]
     );
 
