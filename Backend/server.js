@@ -177,7 +177,7 @@ app.post("/admin/courses", async (req, res) => {
     await pool.query(
       `INSERT INTO courses 
         (course_code, course_name, credits, faculty_name, department, semester, total_seats)
-        VALUES ($1,$2,$3,$4,$5,$6,$7)
+        VALUES ($1,$2,$3,$4,$5,$6,$7)',
       [code, name, credits, faculty, department, semester, totalSeats]
     );
 
