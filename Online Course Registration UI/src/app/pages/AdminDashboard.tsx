@@ -32,7 +32,7 @@ export default function AdminDashboard() {
   }
   const [statsData, setStatsData] = React.useState<any>(null);
   useEffect(() => {
-    fetch("http://localhost:5000/admin/dashboard-stats")
+    fetch("http://https://online-course-registration-system.onrender.com/admin/dashboard-stats")
       .then(res => res.json())
       .then(data => {
         console.log("Dashboard stats:", data);

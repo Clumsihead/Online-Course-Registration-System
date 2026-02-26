@@ -30,7 +30,7 @@ export default function ManageStudents() {
 
   const [students, setStudents] = useState<Student[]>([]);
   useEffect(() => {
-  fetch("http://localhost:5000/admin/students")
+  fetch("http://https://online-course-registration-system.onrender.com/admin/students")
     .then(res => res.json())
     .then(data => {
       console.log("STUDENTS DATA:", data);
@@ -40,7 +40,7 @@ export default function ManageStudents() {
 }, []);
 
     const handleViewStudent = async (student: Student) => {
-    const res = await fetch(`http://localhost:5000/admin/students/${student.student_id}/courses`);
+    const res = await fetch(`http://https://online-course-registration-system.onrender.com/admin/students/${student.student_id}/courses`);
     const courses = await res.json();
 
     setSelectedStudent({

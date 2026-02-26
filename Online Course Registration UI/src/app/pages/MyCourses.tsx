@@ -31,7 +31,7 @@ export default function MyCourses() {
 }, []);
 
 const fetchMyCourses = async () => {
-  const response = await fetch(`http://localhost:5000/my-courses/${studentId}`);
+  const response = await fetch(`http://https://online-course-registration-system.onrender.com/my-courses/${studentId}`);
   const data = await response.json();
   setRegisteredCourses(data);
 };
@@ -46,7 +46,7 @@ useEffect(() => {
   if (!confirm("Are you sure you want to drop this course?")) return;
 
   try {
-    await fetch("http://localhost:5000/enroll", {
+    await fetch("http://https://online-course-registration-system.onrender.com/enroll", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"

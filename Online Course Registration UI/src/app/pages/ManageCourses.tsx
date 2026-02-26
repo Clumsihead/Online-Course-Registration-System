@@ -34,7 +34,7 @@ export default function ManageCourses() {
   
   const [courses, setCourses] = useState<Course[]>([]);
   useEffect(() => {
-    fetch("http://localhost:5000/courses")
+    fetch("http://https://online-course-registration-system.onrender.com/courses")
       .then(res => res.json())
       .then(data => setCourses(data))
       .catch(err => console.error("Error fetching courses:", err));
@@ -49,7 +49,7 @@ export default function ManageCourses() {
   e.preventDefault();
 
   try {
-    const response = await fetch("http://localhost:5000/admin/courses", {
+    const response = await fetch("http://https://online-course-registration-system.onrender.com/admin/courses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -62,7 +62,7 @@ export default function ManageCourses() {
       return;
     }
 
-    const newCourse = await fetch("http://localhost:5000/courses")
+    const newCourse = await fetch("http://https://online-course-registration-system.onrender.com/courses")
       .then(res => res.json());
 
     setCourses(newCourse);
@@ -78,7 +78,7 @@ export default function ManageCourses() {
   const handleDelete = async (courseId: number) => {
   if (!confirm("Are you sure?")) return;
 
-  await fetch(`http://localhost:5000/admin/courses/${courseId}`, {
+  await fetch(`http://https://online-course-registration-system.onrender.com/admin/courses/${courseId}`, {
     method: "DELETE"
   });
 
