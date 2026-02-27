@@ -17,7 +17,7 @@ export default function Login() {
   e.preventDefault();   // VERY IMPORTANT
 
   try {
-    const response = await fetch("http://https://online-course-registration-system.onrender.com/login", {
+    const response = await fetch("https://online-course-registration-system.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

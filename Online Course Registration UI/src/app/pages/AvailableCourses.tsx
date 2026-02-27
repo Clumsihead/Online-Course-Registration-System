@@ -36,7 +36,7 @@ export default function AvailableCourses() {
   
   const [courses, setCourses] = useState<Course[]>([]);
   useEffect(() => {
-  fetch("http://https://online-course-registration-system.onrender.com/courses")
+  fetch("https://online-course-registration-system.onrender.com/courses")
     .then(res => res.json())
     .then(data => setCourses(data))
     .catch(err => console.error("Error fetching courses:", err));
@@ -62,7 +62,7 @@ export default function AvailableCourses() {
   console.log("Sending enrollment request...");
 
   try {
-    const response = await fetch("http://https://online-course-registration-system.onrender.com/enroll", {
+    const response = await fetch("https://online-course-registration-system.onrender.com/enroll", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -78,7 +78,7 @@ export default function AvailableCourses() {
     const data = await response.json();
     console.log("Response data:", data);
 
-    const updated = await fetch("http://https://online-course-registration-system.onrender.com/courses");
+    const updated = await fetch("https://online-course-registration-system.onrender.com/courses");
     const updatedData = await updated.json();
     console.log("Updated courses:", updatedData);
 
